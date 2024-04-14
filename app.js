@@ -9,7 +9,7 @@ app.get('/', (req, res) => {
 });
 
 app.post('/submit-form', (req, res) => {
-    const username = req.body.username; // access form data
+    const fname = req.body.username; // access form data
     // Add validation logic here
     res.send(``);
 });
@@ -17,6 +17,14 @@ app.post('/submit-form', (req, res) => {
 app.listen(port, () => {
     console.log(`Server running on http://localhost:${port}`);
 });
+
+function validateForm() {
+    let x = document.forms["myForm"]["fname"]["lname"]["mood"]["thing1"]["thing2"]["thing3"].value;
+    if (x == "") {
+      alert("Name must be filled out");
+      return false;
+    }
+  }
 
 window.localStorage.setItem ('itemName', value)
 var retrievedValue = window.localStorage['itemName']
