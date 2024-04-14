@@ -18,6 +18,7 @@ app.listen(port, () => {
     console.log(`Server running on http://localhost:${port}`);
 });
 
+// Adding a form here to check the validation and introduction
 function validateForm() {
     let x = document.forms["myForm"]["fname"]["lname"]["mood"]["thing1"]["thing2"]["thing3"].value;
     if (x == "") {
@@ -25,6 +26,21 @@ function validateForm() {
       return false;
     }
   }
+  {
+    const response = await fetch("https://ijackson12.github.io/MileStone_2/?fname=&lname=&mood=&thing2=Tacos&thing3=Other", {
+      method: "POST",
+      // Setting the Data and Requesting the Data
+      body: formData,
+    });
+    console.log(await response.json());
+  } try {e}
+    catch{error(e);
+    }
 
+// Take over the form submission
+form.addEventListener("submit", (event) => {
+  event.preventDefault();
+  sendData();
+});
 window.localStorage.setItem ('itemName', value)
 var retrievedValue = window.localStorage['itemName']
